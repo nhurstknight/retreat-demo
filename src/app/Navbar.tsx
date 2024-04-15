@@ -1,5 +1,6 @@
 'use client'
 import { React, useState } from "react";
+import NavLinks from "./NavLinks";
 
 const Navbar = () => {
     const [isClick, setIsClick] = useState(false)
@@ -16,29 +17,14 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                                 <a href="/" className="text-white">
-                                    Logo
+                                    Wellness Retreats
                                 </a>
                             </div>
                         </div>
                         <div className="hidden md:block">
-                            <div className="ml-4 flex items-center space-x-4">
-                                <a href="/" className="text-white hover:bg-white hover:text-black rounded-lg p-2"
-                                >
-                                    Home
-                                </a>
-                                <a href="/about" className="text-white hover:bg-white hover:text-black rounded-lg p-2"
-                                >
-                                    About
-                                </a>
-                                <a href="/blog" className="text-white hover:bg-white hover:text-black rounded-lg p-2"
-                                >
-                                    Blog
-                                </a>
-                                <a href="/contact" className="text-white hover:bg-white hover:text-black rounded-lg p-2"
-                                >
-                                    Contact
-                                </a>
-                            </div>
+                            <ul className="ml-4 flex items-center space-x-4">
+                                <NavLinks />
+                            </ul>
                         </div>
                         <div className="md:hidden flex items-center">
                             <button
@@ -85,24 +71,9 @@ const Navbar = () => {
                 </div>
                 {isClick && (
                     <div className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="/" className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
-                            >
-                                Home
-                            </a>
-                            <a href="/about" className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
-                            >
-                                About
-                            </a>
-                            <a href="/blog" className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
-                            >
-                                Blog
-                            </a>
-                            <a href="/contact" className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
-                            >
-                                Contact
-                            </a>
-                        </div>
+                        <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <NavLinks />
+                        </ul>
                     </div>
                 )}                    
             </nav>

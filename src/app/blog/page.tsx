@@ -17,8 +17,10 @@ export default async function Blog() {
   const blogEntries = await getBlogEntries()
   return (
     <main className="flex min-h-screen flex-col p-24 gap-y-8">
+
       {blogEntries.items.map((singlePost) => {
         const { slug, title, date } = singlePost.fields
+
         return (
           <div key={slug}>
             <Link className="group" href={`/articles/${slug}`}>
@@ -35,6 +37,7 @@ export default async function Blog() {
           </div>
         )
       })}
+      
     </main>
   )
 }
